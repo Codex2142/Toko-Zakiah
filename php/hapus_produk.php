@@ -31,3 +31,21 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])) {
 // Setelah menampilkan pesan, arahkan kembali ke halaman admin atau halaman terkait
 header("refresh:2;url=admin.php");
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hapus Produk</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../style/style.css" />
+</head>
+<body>
+    
+</body>
+</html>

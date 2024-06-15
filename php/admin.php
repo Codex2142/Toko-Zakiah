@@ -30,6 +30,7 @@
 
     <div class="container mt-5">
         <h1 class="h1">Daftar <span>Produk</span></h1>
+        <a href="tambah_produk.php" class="btn btn-primary mb-3">Tambah Produk</a>
         
         <!-- Form pencarian -->
         <form action="" method="get" class="mb-3">
