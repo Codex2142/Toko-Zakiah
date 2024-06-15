@@ -1,0 +1,102 @@
+body {
+  font-family: sans-serif;
+  font-size: 22px;
+}
+.nav-link.active {
+  color: #80c4e9 !important;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
+.nav-link:hover {
+  color: #604cc3 !important;
+}
+
+.hero-section {
+  position: relative;
+  height: 90vh;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+}
+
+.hero-section .background-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/heroes.png") no-repeat center center;
+  background-size: cover;
+  filter: blur(2px);
+  z-index: 99;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 100;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+}
+
+.hero-section .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.hero-section .btn-outline-light {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.hero-section .btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #007bff;
+}
+.h1 {
+  text-align: center;
+}
+span {
+  font-weight: bold;
+  color: #3abef9;
+}
+/* Foto Section */
+.foto-section {
+  padding: 50px 0;
+  background-color: #eeeeee;
+}
+
+.foto-section .left-side,
+.foto-section .right-side {
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.foto-section .left-side .card {
+  border-radius: 20px;
+}
+.card {
+  marign: 20px;
+}
+.card-img-top {
+  border-radius: 20px;
+}
+.card-title {
+  font-weight: bold;
+}
+
+.foto-section .right-side {
+  background-color: #eeeeee;
+}
+.inijadwal {
+  background-color: #eeeeee;
+}
