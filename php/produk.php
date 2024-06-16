@@ -118,6 +118,25 @@
         <!-- End Tabel produk -->
     </div>
 
+    <!-- start footer -->
+    <footer class="bg-light text-center py-4 mt-5">
+      <div class="container">
+        <img
+          src="assets/layanan.jpg"
+          alt="Logo"
+          style="width: 100px"
+          class="mb-3"
+        />
+
+        <p class="mt-1">
+          Toko Zakiah menyediakan produk berkualitas dengan layanan terbaik
+          untuk Anda.
+        </p>
+        <p class="mb-0">&copy; 2024 Toko Zakiah. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- end footer -->
+
     <!-- Bootstrap JavaScript (optional) -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
