@@ -1,5 +1,19 @@
 <?php
     include("koneksi.php");
+    session_start();
+
+    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+        header('Location: login.php');
+        exit();
+    }
+
+    // Check if session has expired
+    if (time() > $_SESSION['expire_time']) {
+        session_unset();
+        session_destroy();
+        header('Location: login.php');
+        exit();
+    }
 
     // Inisialisasi variabel pencarian
     $keyword = "";

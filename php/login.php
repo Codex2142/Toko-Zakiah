@@ -1,31 +1,39 @@
 <?php
-    include("koneksi.php");
+session_start();
 
-    // Memeriksa apakah form telah disubmit
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Ambil nilai username dan password dari form
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+if (isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: admin.php');
+    exit();
+}
 
-        // Lindungi dari SQL Injection
-        $username = mysqli_real_escape_string($connection, $username);
-        $password = mysqli_real_escape_string($connection, $password);
+// Check if session has expired
+if (time() > $_SESSION['expire_time']) {
+    session_unset();
+    session_destroy();
+    header('Location: login.php');
+    exit();
+}
 
-        // Query untuk memeriksa username dan password
-        $query = "SELECT * FROM login WHERE username = '$username' AND password = '$password'";
-        $result = mysqli_query($connection, $query);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-        if (mysqli_num_rows($result) == 1) {
-            // Jika username dan password cocok
-            // Redirect ke halaman admin.php
-            header("Location: admin.php");
-            exit(); // Penting: pastikan untuk keluar dari skrip setelah redirect
-        } else {
-            // Jika username atau password salah
-            $error = "Username atau password salah.";
-        }
+    if ($username == 'Admin2745!' && $password == 'TokoZakiah1') {
+        $_SESSION['username'] = $username;
+        $_SESSION['loggedin'] = true;
+        $_SESSION['login_time'] = time();
+
+        // Set session to expire in 6 hours
+        $_SESSION['expire_time'] = $_SESSION['login_time'] + (6 * 60 * 60);
+
+        header('Location: admin.php');
+        exit();
+    } else {
+        $error = "Invalid username or password!";
     }
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

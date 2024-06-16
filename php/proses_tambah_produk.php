@@ -1,5 +1,19 @@
 <?php
 include("koneksi.php");
+session_start();
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: login.php');
+    exit();
+}
+
+// Check if session has expired
+if (time() > $_SESSION['expire_time']) {
+    session_unset();
+    session_destroy();
+    header('Location: login.php');
+    exit();
+}
 
 if (isset($_POST['namaProduk'], $_POST['ukuranProduk'], $_POST['hargaBeli'], $_POST['hargaGrosir'])) {
     $namaProduk = $_POST['namaProduk'];
